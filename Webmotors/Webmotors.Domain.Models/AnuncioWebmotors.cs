@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Webmotors.Domain.Models
+﻿namespace Webmotors.Domain.Models
 {
     public class AnuncioWebmotors
     {

@@ -16,6 +16,7 @@
     <ProjectReference Include="..\Webmotors.Data.Dal.Contracts\Webmotors.Data.Dal.Contracts.csproj" />
     <ProjectReference Include="..\Webmotors.Data.Dal\Webmotors.Data.Dal.csproj" />
     <ProjectReference Include="..\Webmotors.Data.Mapping\Webmotors.Data.Mapping.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Models\Webmotors.Domain.Models.csproj" />
     <ProjectReference Include="..\Webmotors.Mapper\Webmotors.Mapper.csproj" />
     <ProjectReference Include="..\Webmotors.Mediator.Service.Contracts\Webmotors.Mediator.Service.Contracts.csproj" />
     <ProjectReference Include="..\Webmotors.Mediator.Service\Webmotors.Mediator.Service.csproj" />

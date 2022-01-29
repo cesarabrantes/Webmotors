@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Webmotors.Business.Contracts;
+using Webmotors.Domain.Models;
 using Webmotors.ViewModel;
 
 namespace Webmotors.Controllers
@@ -25,11 +26,29 @@ namespace Webmotors.Controllers
             this.vMapper = pMapper;
             this.vService = pService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var vObjList = vService.LoadDataApi().Result;
+            var vObjList = await vService.LoadDataApi();
             var vObjListVM = vMapper.Map<List<AnuncioWebmotorsVM>>(vObjList);
             return View(vObjListVM);
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create([Bind] AnuncioWebmotorsVM anuncioWebmotors)
+        {
+            if (ModelState.IsValid)
+            {
+                var AnuncioWebmotorsD = vMapper.Map<AnuncioWebmotors>(anuncioWebmotors);
+                await vService.SaveAsync( AnuncioWebmotorsD );                
+                return RedirectToAction("Index");
+            }
+            
+            return View(anuncioWebmotors);
         }
     }
 }
