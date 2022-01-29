@@ -3,12 +3,12 @@ using Webmotors.Domain.Models;
 
 namespace Webmotors.Data.Mapping
 {
-    public class AnuncioWebmotorsMap : ClassMap<AnuncioWebmotors>
+    public class AnuncioWebmotorsMap : ClassMap<AnuncioWebmotors>, IRegisterEscopoMapping
     {
         public AnuncioWebmotorsMap()
         {
             Table("tb_AnuncioWebmotors");
-            Id(p => p.Id).Column("").Not.Nullable();
+            Id(p => p.Id).Column("ID").Not.Nullable();
             Map(p => p.Marca).Column("marca").Length(45).Not.Nullable();
             Map(p => p.Modelo).Column("modelo").Length(45).Not.Nullable();
             Map(p => p.Versao).Column("versao").Length(45).Not.Nullable();

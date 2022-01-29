@@ -4,7 +4,7 @@ using Webmotors.Domain.Models;
 
 namespace Webmotors.Data.Dal
 {
-    public class AnuncioWebmotorsRepository : Repository<AnuncioWebmotors, int>, IAnuncioWebmotorsRepository
+    public class AnuncioWebmotorsRepository : Repository<AnuncioWebmotors, int>, IAnuncioWebmotorsRepository, IRegisterEscopoDal
     {
         public AnuncioWebmotorsRepository(ISession pSession)
         {

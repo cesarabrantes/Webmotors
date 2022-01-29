@@ -4,4 +4,21 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Business.Contracts\Webmotors.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Webmotors.Business\Webmotors.Business.csproj" />
+    <ProjectReference Include="..\Webmotors.Data.Dal.Contracts\Webmotors.Data.Dal.Contracts.csproj" />
+    <ProjectReference Include="..\Webmotors.Data.Dal\Webmotors.Data.Dal.csproj" />
+    <ProjectReference Include="..\Webmotors.Data.Mapping\Webmotors.Data.Mapping.csproj" />
+    <ProjectReference Include="..\Webmotors.Mapper\Webmotors.Mapper.csproj" />
+    <ProjectReference Include="..\Webmotors.Mediator.Service.Contracts\Webmotors.Mediator.Service.Contracts.csproj" />
+    <ProjectReference Include="..\Webmotors.Mediator.Service\Webmotors.Mediator.Service.csproj" />
+    <ProjectReference Include="..\Webmotors.ViewModel\Webmotors.ViewModel.csproj" />
+  </ItemGroup>
+
 </Project>

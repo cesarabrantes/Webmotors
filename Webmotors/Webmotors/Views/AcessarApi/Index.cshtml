@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Webmotors.ViewModel.AnuncioWebmotorsVM>
+
+@{
+    ViewData["Title"] = "Acessar Api";
+}
+
+<h1>Index</h1>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+}

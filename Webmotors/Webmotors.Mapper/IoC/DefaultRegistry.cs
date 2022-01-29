@@ -11,6 +11,7 @@ namespace Webmotors.Mapper.IoC
             {
                 config.AddProfile<DomainProfile>();
                 config.AddProfile<ViewModelProfile>();
+                config.AddProfile<MediatorDomain>();
             });
 
             IMapper mapper = vMapperConfiguration.CreateMapper();

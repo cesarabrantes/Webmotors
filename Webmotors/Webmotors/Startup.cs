@@ -8,6 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Webmotors.Business.IoC;
+using Webmotors.Data.Dal.IoC;
+using Webmotors.Data.Mapping.IoC;
+using Webmotors.Mapper.IoC;
+using Webmotors.Mediator.Service.IoC;
 
 namespace Webmotors
 {
@@ -24,6 +29,11 @@ namespace Webmotors
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddAutoMapper();
+            services.AddNHibernate(Configuration);
+            services.AddRegistryDomainRepository();
+            services.AddMediator(Configuration);
+            services.AddRegistryDomainBusiness();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
