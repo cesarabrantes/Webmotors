@@ -1,0 +1,5 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Webmotors/Webmotors.Business.Contracts/bin/Debug/net5.0/ref/Webmotors.Business.Contracts.dll
