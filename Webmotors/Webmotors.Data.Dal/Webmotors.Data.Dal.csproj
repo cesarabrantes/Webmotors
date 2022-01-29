@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+    <PackageReference Include="NHibernate" Version="5.3.10" />
+    <PackageReference Include="Scrutor" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Data.Dal.Contracts\Webmotors.Data.Dal.Contracts.csproj" />
+    <ProjectReference Include="..\Webmotors.Domain.Models\Webmotors.Domain.Models.csproj" />
+  </ItemGroup>
+
+</Project>

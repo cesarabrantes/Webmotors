@@ -2,4 +2,30 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Webmotors/Webmotors.Business.Contracts/bin/Debug/net5.0/ref/Webmotors.Business.Contracts.dll
+/Webmotors/Webmotors.Business.Contracts/bin/*
+/Webmotors/Webmotors.Business.Contracts/obj/*
+/Webmotors/Webmotors.Business/bin/*
+/Webmotors/Webmotors.Business/obj/*
+/Webmotors/Webmotors.Data.Dal.Contracts/bin/*
+/Webmotors/Webmotors.Data.Dal.Contracts/obj/*
+/Webmotors/Webmotors.Data.Dal/bin/*
+/Webmotors/Webmotors.Data.Mapping/obj/*
+/Webmotors/Webmotors.Domain.Models/obj/*
+/Webmotors/Webmotors.Mapper/bin/*
+/Webmotors/Webmotors.Mediator.Api.Client/bin/*
+/Webmotors/Webmotors.Mediator.Service.Contracts/bin/*
+/Webmotors/Webmotors.Mediator.Service/bin/*
+/Webmotors/Webmotors.ViewModel/bin/*
+/Webmotors/Webmotors/bin/*
+/Webmotors/Webmotors.Data.Dal/obj/*
+/Webmotors/Webmotors.Data.Mapping/bin/*
+/Webmotors/Webmotors.Domain.Models/bin/*
+/Webmotors/Webmotors.Mapper/obj/*
+/Webmotors/Webmotors.Mediator.Api.Client/obj/*
+/Webmotors/Webmotors.Mediator.Api.Models/bin/*
+/Webmotors/Webmotors.Mediator.Api.Models/obj/*
+/Webmotors/Webmotors/obj/*
+/Webmotors/Webmotors/obj/*
+/Webmotors/Webmotors.Mediator.Service/obj/*
+/Webmotors/Webmotors.ViewModel/obj/*
+/Webmotors/Webmotors.Mediator.Service.Contracts/obj/*

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Domain.Models\Webmotors.Domain.Models.csproj" />
+    <ProjectReference Include="..\Webmotors.Mediator.Api.Models\Webmotors.Mediator.Api.Models.csproj" />
+    <ProjectReference Include="..\Webmotors.ViewModel\Webmotors.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

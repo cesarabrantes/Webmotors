@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Webmotors.Mediator.Api.Client\Webmotors.Mediator.Api.Client.csproj" />
+    <ProjectReference Include="..\Webmotors.Mediator.Api.Models\Webmotors.Mediator.Api.Models.csproj" />
+    <ProjectReference Include="..\Webmotors.Mediator.Service.Contracts\Webmotors.Mediator.Service.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
