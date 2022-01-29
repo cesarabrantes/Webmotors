@@ -27,7 +27,7 @@ namespace Webmotors.Controllers
         }
         public IActionResult Index()
         {
-            var vObjList = vService.LoadDataApi();
+            var vObjList = vService.LoadDataApi().Result;
             var vObjListVM = vMapper.Map<List<AnuncioWebmotorsVM>>(vObjList);
             return View(vObjListVM);
         }

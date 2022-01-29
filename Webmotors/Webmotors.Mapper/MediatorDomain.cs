@@ -13,7 +13,9 @@ namespace Webmotors.Mapper
                 .ForMember(dest => dest.Marca, opt => opt.MapFrom(src => src.Make))
                 .ForMember(dest => dest.Modelo, opt => opt.MapFrom(src => src.Model))
                 .ForMember(dest => dest.Quilometragem, opt => opt.MapFrom(src => src.KM))
-                .ForMember(dest => dest.Versao, opt => opt.MapFrom(src => src.Version));
+                .ForMember(dest => dest.Versao, opt => opt.MapFrom(src => src.Version))
+                .ForMember(dest => dest.Observacao, opt => opt.MapFrom(src => src.YearFab))
+                .ForMember(x => x.Id, opt => opt.Ignore());
         }
     }
 }

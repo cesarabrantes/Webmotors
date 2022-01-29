@@ -1,11 +1,58 @@
 ﻿@model IEnumerable<Webmotors.ViewModel.AnuncioWebmotorsVM>
 
 @{
-    ViewData["Title"] = "Acessar Api";
+    ViewData["Title"] = "Gerenciar anúncios";
 }
 
-<h1>Index</h1>
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-}
+<h1>Gerenciar anúncios</h1>
+<h4>
+    <p>
+        Esta action irá chamadar o método LoadDataApi da classe AnuncioWebmotorsService. Ele irá verificar se a tabela tb_AnuncioWebmotors esta vazia, caso esteja, irá buscar os dados da api e persistir no banco de dados.
+    </p>
+</h4>
+<p style="text-align:right">
+    @Html.ActionLink("Adicionar", "Create")
+</p>
+<table class="table table-condensed" id="dataGrid">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Versao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>            
+            <th style="min-width: 60px" class="action-button">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Versao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ano)
+                </td>                
+                <td>
+                    <a href="@Url.Action("Edit", item.Id )" title="Alterar"><i class="fa fa-pencil-square-o fa-15x"></i></a>
+                    <a href="@Url.Action("Details",item.Id )" title="Detalhes"><i class="fa fa-file-text-o fa-15x"></i></a>
+                    <a href="@Url.Action("Delete", item.Id )" title="Excluir"><i class="fa fa-trash-o fa-15x"></i></a>                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

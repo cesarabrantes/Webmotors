@@ -7,7 +7,7 @@ namespace Webmotors.ViewModel
         public int Id { get; set; }
 
         [StringLength(45)]
-        [Display(Name = "Banco de Dados SQL")]
+        [Display(Name = "Marca")]
         public string Marca { get; set; }
 
         [StringLength(45)]

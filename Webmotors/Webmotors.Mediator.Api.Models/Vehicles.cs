@@ -2,6 +2,8 @@
 {
     public class Vehicles
     {
+        private string vYearFab;
+
             public int ID { get; set; }
             public string Make { get; set; }
             public string Model { get; set; }
@@ -10,7 +12,7 @@
             public long KM { get; set; }
             public string Price { get; set; }
             public int YearModel { get; set; }
-            public int YearFab { get; set; }
+            public string YearFab { get { return $"Ano de fabricação {vYearFab}"; } set { vYearFab = value; } }
             public string Color { get; set; }        
 
     }
