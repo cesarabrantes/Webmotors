@@ -29,3 +29,5 @@
 /Webmotors/Webmotors.Mediator.Service/obj/*
 /Webmotors/Webmotors.ViewModel/obj/*
 /Webmotors/Webmotors.Mediator.Service.Contracts/obj/*
+/Webmotors/Webmotors.Common/bin/*
+/Webmotors/Webmotors.Common/obj/*

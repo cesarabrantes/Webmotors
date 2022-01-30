@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Webmotors.Business.Contracts\Webmotors.Business.Contracts.csproj" />
+    <ProjectReference Include="..\Webmotors.Common\Webmotors.Common.csproj" />
     <ProjectReference Include="..\Webmotors.Data.Dal.Contracts\Webmotors.Data.Dal.Contracts.csproj" />
     <ProjectReference Include="..\Webmotors.Mediator.Service.Contracts\Webmotors.Mediator.Service.Contracts.csproj" />
   </ItemGroup>

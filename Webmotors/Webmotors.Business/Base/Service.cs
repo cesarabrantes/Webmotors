@@ -14,25 +14,61 @@ namespace Webmotors.Business
         protected IRepository<T, TKey> vRepository;
         protected ILogger<Service<T, TKey>> vLogger;
 
-        #region Get
+        #region Get        
         public virtual IQueryable<T> GetAll()
         {
-            return vRepository.GetAll();
+            try
+            {
+                return vRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                vLogger.LogError(ex, "Ocorreu um erro ao buscar todos os registros {@" + typeof(T).Name + "}");
+                throw new Exception(typeof(T).Name, new Exception("Ocorreu um erro no processo de busca"));
+
+            }
         }
 
         public virtual async Task<IList<TType>> GetByConditionanonymousAsync<TType>(Expression<Func<T, bool>> pPredicate, Expression<Func<T, TType>> pSelect) where TType : class
         {
-            return await vRepository.GetByConditionanonymousAsync(pPredicate, pSelect);
+            try
+            {
+                return await vRepository.GetByConditionanonymousAsync(pPredicate, pSelect);
+            }
+            catch (Exception ex)
+            {
+                vLogger.LogError(ex, "Ocorreu um erro ao buscar registro {@" + typeof(T).Name + "}");
+                throw new Exception(typeof(T).Name, new Exception("Ocorreu um erro no processo de busca"));
+
+            }
         }
 
         public virtual async Task<IList<T>> GetByConditionAsync(Expression<Func<T, bool>> pPredicate)
         {
-            return await vRepository.GetByConditionAsync(pPredicate);
+            try
+            {
+                return await vRepository.GetByConditionAsync(pPredicate);
+            }
+            catch (Exception ex)
+            {
+                vLogger.LogError(ex, "Ocorreu um erro ao buscar registro {@" + typeof(T).Name + "}");
+                throw new Exception(typeof(T).Name, new Exception("Ocorreu um erro no processo de busca"));
+
+            }
         }
 
         public virtual async Task<T> GetByIdAsync(TKey pId)
         {
-            return await vRepository.GetByIdAsync(pId);
+            try
+            {
+                return await vRepository.GetByIdAsync(pId);
+            }
+            catch (Exception ex)
+            {
+                vLogger.LogError(ex, "Ocorreu um erro ao buscar registro {@" + typeof(T).Name + "}", pId);
+                throw new Exception(typeof(T).Name, new Exception("Ocorreu um erro no processo de busca"));
+
+            }
         }
 
         #endregion
