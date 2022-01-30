@@ -17,7 +17,8 @@ namespace Webmotors.ViewModel
         [StringLength(45)]
         [Display(Name = "Versão")]
         public string Versao { get; set; }
-        
+
+        [Range(1900, 2022, ErrorMessage = "Ano inválido")]
         [Display(Name = "Ano")]
         public int Ano { get; set; }
 
