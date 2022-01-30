@@ -48,9 +48,9 @@
                     @Html.DisplayFor(modelItem => item.Ano)
                 </td>                
                 <td>
-                    <a href="@Url.Action("Edit", item.Id )" title="Alterar"><i class="fa fa-pencil-square-o fa-15x"></i></a>
-                    <a href="@Url.Action("Details",item.Id )" title="Detalhes"><i class="fa fa-file-text-o fa-15x"></i></a>
-                    <a href="@Url.Action("Delete", item.Id )" title="Excluir"><i class="fa fa-trash-o fa-15x"></i></a>                    
+                    <a href="@Url.Action("Edit", new { id = item.Id} )" title="Alterar"><i class="fa fa-pencil-square-o fa-15x"></i></a>
+                    <a href="@Url.Action("Details",new { id = item.Id} )" title="Detalhes"><i class="fa fa-file-text-o fa-15x"></i></a>
+                    <a href="@Url.Action("Delete", new { id = item.Id} )" title="Excluir"><i class="fa fa-trash-o fa-15x"></i></a>                    
                 </td>
             </tr>
         }

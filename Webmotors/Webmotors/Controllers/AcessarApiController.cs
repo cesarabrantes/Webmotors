@@ -33,6 +33,7 @@ namespace Webmotors.Controllers
             return View(vObjListVM);
         }
 
+        #region Create
         public ActionResult Create()
         {
             return View();
@@ -43,12 +44,114 @@ namespace Webmotors.Controllers
         {
             if (ModelState.IsValid)
             {
-                var AnuncioWebmotorsD = vMapper.Map<AnuncioWebmotors>(anuncioWebmotors);
-                await vService.SaveAsync( AnuncioWebmotorsD );                
+                var vAnuncioWebmotors = vMapper.Map<AnuncioWebmotors>(anuncioWebmotors);
+                await vService.SaveAsync( vAnuncioWebmotors );                
                 return RedirectToAction("Index");
             }
             
             return View(anuncioWebmotors);
         }
+
+        #endregion
+
+        #region Edit
+        [HttpGet]
+        public async Task<ActionResult> Edit(int? id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    throw new Exception("Id do registro não pode ser vazio");
+                }
+
+                //Método já popula o objeto da View Model
+                var vAnuncioWebmotors = await vService.GetByConditionanonymousAsync(o => o.Id == id, 
+                    s => new AnuncioWebmotorsVM {
+                        Id = s.Id,
+                        Ano =s.Ano,
+                        Marca=s.Marca,
+                        Modelo=s.Modelo,
+                        Observacao =s.Observacao,
+                        Quilometragem=s.Quilometragem,
+                        Versao =s.Versao
+                    });
+
+                if(vAnuncioWebmotors.Count == 0)
+                {
+                    throw new Exception("Anúncio não encontrado");
+                }
+
+                return View(vAnuncioWebmotors.FirstOrDefault());
+
+            }catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit([Bind] AnuncioWebmotorsVM anuncioWebmotors)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var vAnuncioWebmotors = vMapper.Map<AnuncioWebmotors>(anuncioWebmotors);
+                    await vService.UpdateAsync(vAnuncioWebmotors);
+                    return RedirectToAction("Index");
+                }
+
+                return View(anuncioWebmotors);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        #endregion
+
+
+
+        #region Details
+
+        [HttpGet]
+        public async Task<ActionResult> Details(int? id)
+        {
+            try
+            {
+                if (id == null)
+                {
+                    throw new Exception("Id do registro não pode ser vazio");
+                }
+
+                //Método já popula o objeto da View Model
+                var vAnuncioWebmotors = await vService.GetByConditionanonymousAsync(o => o.Id == id,
+                    s => new AnuncioWebmotorsVM
+                    {
+                        Id = s.Id,
+                        Ano = s.Ano,
+                        Marca = s.Marca,
+                        Modelo = s.Modelo,
+                        Observacao = s.Observacao,
+                        Quilometragem = s.Quilometragem,
+                        Versao = s.Versao
+                    });
+
+                if (vAnuncioWebmotors.Count == 0)
+                {
+                    throw new Exception("Anúncio não encontrado");
+                }
+
+                return View(vAnuncioWebmotors.FirstOrDefault());
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+        #endregion
     }
 }
