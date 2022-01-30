@@ -1,6 +1,6 @@
 ﻿namespace Webmotors.Data.Dal
 {
-    //Interface de maração para registro de forma genérica
+    //Interface de marcação para registro de forma genérica e massiva
     public interface IRegisterEscopoDal
     {
     }

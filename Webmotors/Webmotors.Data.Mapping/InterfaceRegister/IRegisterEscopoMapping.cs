@@ -1,6 +1,6 @@
 ﻿namespace Webmotors.Data.Mapping
 {
-    //Interface de maração para registro de forma genérica
+    //Interface de marcação para registro de forma genérica e massiva
     public interface IRegisterEscopoMapping
     {
     }
