@@ -75,6 +75,7 @@ namespace Webmotors.Controllers
 
         #endregion
 
+
         #region Edit
         [HttpGet]
         public async Task<ActionResult> Edit(int? id)
@@ -147,14 +148,13 @@ namespace Webmotors.Controllers
         #endregion
 
 
-
         #region Details
 
         [HttpGet]
         public async Task<ActionResult> Details(int? id)
         {
             try
-            {                
+            {
                 if (id == null)
                 {
                     throw new CustomException("Id do registro não pode ser vazio");
@@ -193,7 +193,7 @@ namespace Webmotors.Controllers
                 vLogger.LogError(ex.GetInnerException().Message);
                 return BadRequest("Ocorreu um erro na requisição");
             }
-            
+
         }
         #endregion
 
@@ -233,7 +233,8 @@ namespace Webmotors.Controllers
                 vLogger.LogError(ex.GetInnerException().Message);
                 return BadRequest("Ocorreu um erro na requisição");
             }
-
-            #endregion
         }
+
+        #endregion
+    }
 }

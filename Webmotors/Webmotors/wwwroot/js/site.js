@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(function () {
 
-// Write your JavaScript code.
+    $("a.deleteAnuncio").click(function (e) {
+
+        e.preventDefault();
+        _this = $(this);
+        var url = _this.attr("href");
+
+        var vAnuncio = $(_this).attr("data-delete");
+        var dialog = confirm("Deseja realmente excluir " + vAnuncio + " ?");
+
+        if (dialog) {
+            window.location.href = url;
+        }
+
+    })
+
+})
